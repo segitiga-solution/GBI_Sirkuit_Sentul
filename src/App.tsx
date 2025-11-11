@@ -18,6 +18,9 @@ import {
   HandHeart,
   Waves,
   Handshake,
+  Users2,
+  PersonStanding,
+  HandHelping,
 } from "lucide-react";
 
 import PastorProfile from "./pages/PastorProfile";
@@ -29,6 +32,10 @@ import AboutSlideshow from "./pages/AboutSlideshow";
 import PelayananBaptisanAir from "./pages/BaptisanAir";
 import PelayananPemberkatanPernikahan from "./pages/PemberkatanPernikahan";
 import PelayananKonseling from "./pages/Konseling";
+import PelayananCommunityOfLove from "./pages/cool";
+import PelayananDoa from "./pages/PelayananDoa";
+
+
 
 
 
@@ -44,10 +51,11 @@ export default function App() {
 
   const ministries = [
     {
-      icon: Users,
-      title: "Pelayanan Anak",
-      description: "Membimbing generasi muda dalam iman Kristiani.",
+      icon: HandHelping,
+      title: "Pelayanan Doa",
+      description: "Pelayanan Doa hadir untuk menopang jemaat melalui doa syafaat, percaya bahwa kuasa Tuhan bekerja bagi setiap orang yang berseru kepada-Nya.",
       color: "bg-amber-50 text-amber-600",
+      action: () => setCurrentPage("doa"),
     },
     {
       icon: Heart,
@@ -65,10 +73,11 @@ export default function App() {
       action: () => setCurrentPage("konseling"),
     },
     {
-      icon: Church,
-      title: "Pelayanan Musik",
-      description: "Memuji Tuhan dengan sepenuh hati dan sukacita.",
+      icon: Users,
+      title: "Community of Love",
+      description: "Menjadi wadah persekutuan jemaat yang saling mengasihi, menguatkan, dan bertumbuh bersama dalam kasih Kristus.",
       color: "bg-green-50 text-green-600",
+      action: () => setCurrentPage("community"),
     },
     {
       icon: Cross,
@@ -244,6 +253,33 @@ export default function App() {
       <PelayananKonseling />
     </div>
   );
+
+  if (currentPage === "community")
+  return (
+    <div className="fixed inset-0 z-50 overflow-auto bg-white">
+      <button
+        onClick={() => setCurrentPage("home")}
+        className="fixed top-4 left-4 md:top-6 md:left-6 z-10 bg-gradient-to-br from-red-600 to-pink-500 text-white shadow-lg rounded-full p-3 hover:shadow-xl transition-all"
+      >
+        <ArrowLeft className="h-6 w-6" />
+      </button>
+      <PelayananCommunityOfLove />
+    </div>
+  );
+
+  if (currentPage === "doa")
+  return (
+    <div className="fixed inset-0 z-50 overflow-auto bg-white">
+      <button
+        onClick={() => setCurrentPage("home")}
+        className="fixed top-4 left-4 md:top-6 md:left-6 z-10 bg-gradient-to-br from-indigo-700 to-indigo-500 text-white shadow-lg rounded-full p-3 hover:shadow-xl transition-all"
+      >
+        <ArrowLeft className="h-6 w-6" />
+      </button>
+      <PelayananDoa />
+    </div>
+  );
+
 
 
   // -------------------------
