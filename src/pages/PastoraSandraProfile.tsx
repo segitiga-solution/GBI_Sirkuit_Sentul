@@ -289,12 +289,15 @@ export default function PastoraSandraProfile() {
             Sirkuit Sentul dan mengalami pelayanan yang penuh kasih dan
             dedikasi di bawah kepemimpinan Pdt. Sandra Suharsa.
           </p>
-          <a
-            href="/#schedule"
-            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-rose-600 to-rose-500 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all"
-          >
-            Lihat Jadwal Ibadah
-          </a>
+         <button
+  onClick={() => {
+    window.location.hash = "schedule"; // akan trigger scroll di App.tsx
+  }}
+  className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-rose-600 to-rose-500 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+>
+  Lihat Jadwal Ibadah
+</button>
+
         </div>
       </section>
     </div>

@@ -296,12 +296,17 @@ export default function PastorProfile() {
             Sentul atau ingin bergabung dengan komunitas kami, kami dengan
             senang hati menyambut Anda.
           </p>
-          <a
-            href="/#schedule"
-            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-amber-600 to-amber-500 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all"
-          >
-            Lihat Jadwal Ibadah
-          </a>
+          {/* ganti <a href="/#schedule"> atau button lama dengan ini */}
+<button
+  onClick={() => {
+    // set hash — ini akan memicu 'hashchange' dan listener di App.tsx
+    window.location.hash = "schedule";
+  }}
+  className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-amber-600 to-amber-500 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+>
+  Lihat Jadwal Ibadah
+</button>
+
         </div>
       </section>
     </div>

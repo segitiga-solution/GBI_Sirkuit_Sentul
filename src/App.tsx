@@ -36,10 +36,51 @@ import PelayananCommunityOfLove from "./pages/cool";
 import PelayananDoa from "./pages/PelayananDoa";
 
 import { useActiveSection } from "./hooks/useActiveSection";
+import { useEffect } from "react";
+// ... existing imports
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState("home");
+
+  // --- listener untuk handle hash navigation (dari halaman profil dll) ---
+  useEffect(() => {
+    const scrollToSection = (hash: string) => {
+      const id = hash.startsWith("#") ? hash.slice(1) : hash;
+      const el = document.getElementById(id);
+      if (el) {
+        // hitung offset agar tidak tertutup navbar (sesuaikan -80 jika perlu)
+        const y = el.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+    };
+
+    const handleHash = () => {
+      const hash = window.location.hash;
+      if (!hash) return;
+      const id = hash.replace("#", "");
+      // kalau hash ke schedule (atau section lain), pastikan tampilkan home dulu
+      if (id === "schedule") {
+        // pastikan kita berada di main page
+        setCurrentPage("home");
+        // beri sedikit delay supaya DOM sudah render dan section ada
+        setTimeout(() => scrollToSection(hash), 120);
+      } else {
+        // umum: back to home and scroll to section
+        setCurrentPage("home");
+        setTimeout(() => scrollToSection(hash), 120);
+      }
+    };
+
+    // cek saat mount (jika user membuka /#schedule langsung)
+    handleHash();
+
+    // listen ke perubahan hash (mis. window.location.hash = 'schedule')
+    window.addEventListener("hashchange", handleHash);
+    return () => window.removeEventListener("hashchange", handleHash);
+  }, [setCurrentPage]);
+  // -----------------------------------------------------------------------
+
 
   const activeSection = useActiveSection(["home", "about", "schedule", "ministries", "contact"]);
 
