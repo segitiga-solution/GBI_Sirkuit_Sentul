@@ -49,7 +49,7 @@ export default function App() {
     const id = hash.startsWith("#") ? hash.slice(1) : hash;
     const el = document.getElementById(id);
     if (el) {
-      const y = el.getBoundingClientRect().top + window.scrollY - 80; // offset navbar
+      const y = el.getBoundingClientRect().top + window.scrollY - 80;
       window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
@@ -58,19 +58,23 @@ export default function App() {
     const hash = window.location.hash;
     if (!hash) return;
     const id = hash.replace("#", "");
-    // selalu pastikan home page aktif
     setCurrentPage("home");
     setTimeout(() => scrollToSection(hash), 150);
   };
 
-  // hanya panggil handleHash() jika user memang membuka URL langsung dengan hash
-  if (window.location.hash) {
+  // ✅ hanya scroll otomatis jika:
+  // 1. ada hash di URL, DAN
+  // 2. belum pernah di-handle pada sesi ini
+  if (window.location.hash && !sessionStorage.getItem("hashHandled")) {
+    sessionStorage.setItem("hashHandled", "true");
     handleHash();
   }
 
+  // kalau user klik link baru (hashchange manual), jalankan seperti biasa
   window.addEventListener("hashchange", handleHash);
   return () => window.removeEventListener("hashchange", handleHash);
 }, []);
+
 
   // -----------------------------------------------------------------------
 
