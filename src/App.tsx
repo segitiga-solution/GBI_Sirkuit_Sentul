@@ -345,30 +345,33 @@ export default function App() {
     className="md:hidden absolute top-20 left-0 w-full bg-white border-t border-gray-100 shadow-lg z-[9999]"
   >
     <div className="px-6 py-4 space-y-3">
-      {["Beranda", "Tentang", "Jadwal", "Pelayanan", "Kontak"].map((item) => (
-  <button
-    key={item}
-    onClick={() => {
-      setIsMenuOpen(false);
-      const sectionId = item.toLowerCase();
+      {["Beranda", "Tentang", "Jadwal", "Pelayanan", "Kontak"].map((item) => {
+  const sectionId =
+    item === "Beranda"
+      ? "home"
+      : item.toLowerCase().replace(" ", "");
 
-      if (sectionId === "beranda") {
-        // Scroll ke atas dengan smooth
-        window.scrollTo({ top: 0, behavior: "smooth" });
-        return;
-      }
-
-      const el = document.getElementById(sectionId);
-      if (el) {
-        const offset = el.offsetTop - 80; // biar ga ketutup navbar
-        window.scrollTo({ top: offset, behavior: "smooth" });
-      }
-    }}
-    className="block w-full text-left py-2 text-gray-700 hover:text-amber-600 font-medium"
-  >
-    {item}
-  </button>
-))}
+  return (
+    <button
+      key={item}
+      onClick={() => {
+        setIsMenuOpen(false);
+        setTimeout(() => {
+          const el = document.getElementById(sectionId);
+          if (el) {
+            const y = el.getBoundingClientRect().top + window.scrollY - 80;
+            window.scrollTo({ top: y, behavior: "smooth" });
+          } else if (sectionId === "home") {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }
+        }, 300); // beri delay agar menu sempat menutup
+      }}
+      className="block w-full text-left py-2 text-gray-700 hover:text-amber-600 font-medium"
+    >
+      {item}
+    </button>
+  );
+})}
 
     </div>
   </div>
