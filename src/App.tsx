@@ -541,15 +541,54 @@ export default function App() {
                 </p>
               </div>
               <div className="flex items-start gap-4">
-                <Phone className="h-6 w-6 text-amber-400 mt-1" />
-                <p>+62 8577 2065 763</p>
-              </div>
+  <Phone className="h-6 w-6 text-amber-400 mt-1" />
+  <a
+    href="https://wa.me/6285772065763"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:text-amber-400 transition-colors"
+  >
+    +62 8577 2065 763
+  </a>
+</div>
+
               <div className="flex items-start gap-4">
-                <Mail className="h-6 w-6 text-amber-400 mt-1" />
-                <p>gbissn30@gmail.com</p>
-              </div>
+  <Mail className="h-6 w-6 text-amber-400 mt-1" />
+  <a
+    href="mailto:gbissn30@gmail.com"
+    className="hover:text-amber-400 transition-colors"
+  >
+    gbissn30@gmail.com
+  </a>
+</div>
+
+                <div className="flex items-start gap-4">
+             <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.8}
+              stroke="currentColor"
+              className="h-6 w-6 text-amber-400 mt-1"
+             >
+            <path
+             strokeLinecap="round"
+             strokeLinejoin="round"
+             d="M7.5 3h9a4.5 4.5 0 0 1 4.5 4.5v9a4.5 4.5 0 0 1-4.5 4.5h-9A4.5 4.5 0 0 1 3 16.5v-9A4.5 4.5 0 0 1 7.5 3zm9.75 3.75h.008v.008h-.008V6.75zM12 8.25a3.75 3.75 0 1 1 0 7.5 3.75 3.75 0 0 1 0-7.5z"
+            />
+            </svg>
+              <a
+               href="https://www.instagram.com/gbi_sirkuitsentul"
+               target="_blank"
+               rel="noopener noreferrer"
+               className="hover:text-amber-400 transition-colors"
+              >
+              @gbi_sirkuitsentul
+              </a>
             </div>
-          </div>
+
+            </div>
+           </div>
 
           {/* Form */}
           <div className="bg-white/10 backdrop-blur rounded-2xl p-8 border border-white/20">
