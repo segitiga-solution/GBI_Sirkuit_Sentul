@@ -351,12 +351,17 @@ export default function App() {
     onClick={() => {
       setIsMenuOpen(false);
       const sectionId = item.toLowerCase();
+
+      if (sectionId === "beranda") {
+        // Scroll ke atas dengan smooth
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
+
       const el = document.getElementById(sectionId);
       if (el) {
-        window.scrollTo({
-          top: el.offsetTop - 80, // biar gak ketutup navbar fixed
-          behavior: "smooth",
-        });
+        const offset = el.offsetTop - 80; // biar ga ketutup navbar
+        window.scrollTo({ top: offset, behavior: "smooth" });
       }
     }}
     className="block w-full text-left py-2 text-gray-700 hover:text-amber-600 font-medium"
