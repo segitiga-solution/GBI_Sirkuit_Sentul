@@ -35,14 +35,14 @@ import PelayananKonseling from "./pages/Konseling";
 import PelayananCommunityOfLove from "./pages/cool";
 import PelayananDoa from "./pages/PelayananDoa";
 
-
-
-
-
+import { useActiveSection } from "./hooks/useActiveSection";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState("home");
+
+  const activeSection = useActiveSection(["home", "about", "schedule", "ministries", "contact"]);
+
 
   const schedules = [
     { day: "Minggu", time: "09:00 WIB", service: "Ibadah Umum" },
@@ -311,7 +311,7 @@ export default function App() {
             </div>
 
             {/* DESKTOP MENU */}
-<div className="hidden md:flex space-x-8 font-medium">
+          <div className="hidden md:flex space-x-8 font-medium">
   <a href="#home" className="hover:text-amber-600">
     Beranda
   </a>
@@ -327,7 +327,7 @@ export default function App() {
   <a href="#contact" className="hover:text-amber-600">
     Kontak
   </a>
-</div>
+          </div>
 
 {/* MOBILE MENU BUTTON */}
 <button
@@ -345,28 +345,29 @@ export default function App() {
   <div className="md:hidden bg-white border-t">
     <div className="px-4 py-4 space-y-3">
       {[
-        { label: "Beranda", target: "home" },
-        { label: "Tentang", target: "about" },
-        { label: "Jadwal", target: "schedule" },
-        { label: "Pelayanan", target: "ministries" },
-        { label: "Kontak", target: "contact" },
+        { id: "home", label: "Beranda" },
+        { id: "about", label: "Tentang" },
+        { id: "schedule", label: "Jadwal" },
+        { id: "ministries", label: "Pelayanan" },
+        { id: "contact", label: "Kontak" },
       ].map((item) => (
-        <button
-          key={item.target}
-          onClick={() => {
-            document
-              .getElementById(item.target)
-              ?.scrollIntoView({ behavior: "smooth" });
-            setIsMenuOpen(false); // Tutup menu setelah klik
-          }}
-          className="block w-full text-left py-2 text-gray-700 hover:text-amber-600 font-medium"
+        <a
+          key={item.id}
+          href={`#${item.id}`}
+          onClick={() => setIsMenuOpen(false)}
+          className={`block py-2 font-medium transition-colors ${
+            activeSection === item.id
+              ? "text-amber-600 font-semibold"
+              : "text-gray-700 hover:text-amber-600"
+          }`}
         >
           {item.label}
-        </button>
+        </a>
       ))}
     </div>
   </div>
 )}
+
 
 </nav>
 
