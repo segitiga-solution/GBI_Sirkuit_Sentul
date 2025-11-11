@@ -26,6 +26,8 @@ import PelayananPenyerahanAnak from './pages/PelayananPenyerahanAnak';
 import PelayananDiakonia from "./pages/PelayananDiakonia";
 import AboutSlideshow from "./pages/AboutSlideshow";
 import PelayananBaptisanAir from "./pages/BaptisanAir";
+import PelayananPemberkatanPernikahan from "./pages/PemberkatanPernikahan";
+
 
 
 
@@ -49,9 +51,10 @@ export default function App() {
     },
     {
       icon: Heart,
-      title: "Pelayanan Pemuda",
-      description: "Membangun karakter pemuda Kristen yang solid.",
+      title: "Pemberkatan Pernikahan",
+      description: "Meneguhkan penyatuan dua insan di hadapan Tuhan agar membangun rumah tangga yang berlandaskan kasih dan firman-Nya.",
       color: "bg-rose-50 text-rose-600",
+      action: () => setCurrentPage("pernikahan"),
     },
     {
       icon: BookOpen,
@@ -212,6 +215,19 @@ export default function App() {
         <ArrowLeft className="h-6 w-6" />
       </button>
       <PelayananBaptisanAir />
+    </div>
+  );
+  
+  if (currentPage === "pernikahan")
+  return (
+    <div className="fixed inset-0 z-50 overflow-auto bg-white">
+      <button
+        onClick={() => setCurrentPage("home")}
+        className="fixed top-4 left-4 md:top-6 md:left-6 z-10 bg-gradient-to-br from-rose-600 to-pink-500 text-white shadow-lg rounded-full p-3 hover:shadow-xl transition-all"
+      >
+        <ArrowLeft className="h-6 w-6" />
+      </button>
+      <PelayananPemberkatanPernikahan />
     </div>
   );
 
