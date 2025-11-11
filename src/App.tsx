@@ -23,6 +23,8 @@ import PastoraSandraProfile from "./pages/PastoraSandraProfile";
 import PelayananKedukaan from "./pages/PelayananKedukaan"; 
 import PelayananPenyerahanAnak from './pages/PelayananPenyerahanAnak';
 import PelayananDiakonia from "./pages/PelayananDiakonia";
+import AboutSlideshow from "./pages/AboutSlideshow";
+
 
 
 
@@ -305,54 +307,58 @@ export default function App() {
       </section>
 
       {/* ======= ABOUT ======= */}
-      <section id="about" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+    <section id="about" className="py-24 bg-white">
+       <div className="max-w-7xl mx-auto px-4 text-center">
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Tentang Kami
-          </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-12">
-            GBI Sirkuit Sentul adalah gereja yang berkomitmen untuk membangun
-            umat Tuhan melalui pengajaran Firman yang benar, persekutuan yang
-            hangat, dan pelayanan yang penuh kasih.
-          </p>
+        </h2>
+        <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-12">
+         GBI Sirkuit Sentul adalah gereja yang berkomitmen untuk membangun umat
+         Tuhan melalui pengajaran Firman yang benar, persekutuan yang hangat,
+         dan pelayanan yang penuh kasih.
+        </p>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center text-left">
-            <div className="bg-gradient-to-br from-amber-100 to-blue-100 rounded-2xl p-12 shadow-xl flex justify-center">
-              <Church className="h-32 w-32 text-amber-600" />
-            </div>
-            <div className="mt-12 text-center">
-             <h4 className="font-bold text-gray-900 mb-6 text-2xl">Gembala Sidang</h4>
+      {/* Grid dua kolom */}
+        <div className="grid md:grid-cols-2 gap-12 items-center text-left">
+      {/* === Slideshow Foto Gereja === */}
+      <AboutSlideshow />
 
-              <div className="flex flex-col items-center space-y-6 sm:space-y-8">
-               <button
-                onClick={() => setCurrentPage('pastor')}
-                className="w-full max-w-sm bg-white rounded-2xl shadow-lg hover:shadow-2xl border border-amber-200 hover:border-amber-500 transition-all group p-6"
-               >
-               <p className="text-gray-900 font-bold text-lg group-hover:text-amber-600 transition-colors">
-               Pdt. Sandy Suharsa
-               </p>
-               <p className="text-sm text-gray-600 group-hover:text-amber-600 transition-colors mt-1">
-               Klik untuk melihat profil →
-               </p>
-               </button>
+      {/* === Info Gembala Sidang === */}
+      <div className="mt-12 text-center">
+        <h4 className="font-bold text-gray-900 mb-6 text-2xl">
+          Gembala Sidang
+        </h4>
 
-                 <button
-                    onClick={() => setCurrentPage('pastora')}
-                    className="w-full max-w-sm bg-white rounded-2xl shadow-lg hover:shadow-2xl border border-rose-200 hover:border-rose-500 transition-all group p-6"
-                 >
-                 <p className="text-gray-900 font-bold text-lg group-hover:text-rose-600 transition-colors">
-                     Pdt. Sandra Suharsa
-                 </p>
-                 <p className="text-sm text-gray-600 group-hover:text-rose-600 transition-colors mt-1">
-                  Klik untuk melihat profil →
-                 </p>
-               </button>
-                 </div>
-                   </div>
+        <div className="flex flex-col items-center space-y-6 sm:space-y-8">
+          <button
+            onClick={() => setCurrentPage("pastor")}
+            className="w-full max-w-sm bg-white rounded-2xl shadow-lg hover:shadow-2xl border border-amber-200 hover:border-amber-500 transition-all group p-6"
+          >
+            <p className="text-gray-900 font-bold text-lg group-hover:text-amber-600 transition-colors">
+              Pdt. Sandy Suharsa
+            </p>
+            <p className="text-sm text-gray-600 group-hover:text-amber-600 transition-colors mt-1">
+              Klik untuk melihat profil →
+            </p>
+          </button>
 
-          </div>
+          <button
+            onClick={() => setCurrentPage("pastora")}
+            className="w-full max-w-sm bg-white rounded-2xl shadow-lg hover:shadow-2xl border border-rose-200 hover:border-rose-500 transition-all group p-6"
+          >
+            <p className="text-gray-900 font-bold text-lg group-hover:text-rose-600 transition-colors">
+              Pdt. Sandra Suharsa
+            </p>
+            <p className="text-sm text-gray-600 group-hover:text-rose-600 transition-colors mt-1">
+              Klik untuk melihat profil →
+            </p>
+          </button>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* ======= JADWAL ======= */}
       <section

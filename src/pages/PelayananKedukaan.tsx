@@ -21,7 +21,7 @@ export default function PelayananKedukaan() {
             Pelayanan Kedukaan
           </h1>
           <p className="text-lg text-gray-300 leading-relaxed">
-            Memberikan pendampingan penuh kasih kepada keluarga berduka dalam doa, pengurusan administrasi, hingga perizinan pemakaman.
+            Pelayanan Kedukaan hadir sebagai wujud kasih Kristus untuk menghibur dan mendampingi keluarga yang berduka, sebagaimana Tuhan adalah sumber segala penghiburan (2 Korintus 1:3–4). Kami percaya bahwa di dalam Kristus ada pengharapan akan kehidupan kekal (Yohanes 11:25), dan setiap pelayanan ini dilakukan dengan kasih dan empati bagi mereka yang sedang berduka.
           </p>
         </div>
       </section>
@@ -66,22 +66,18 @@ export default function PelayananKedukaan() {
           Tentang Pelayanan
         </h2>
         <p>
-          Pelayanan Kedukaan hadir untuk mendampingi keluarga yang sedang
-          berduka dengan kasih Kristus. Kami percaya bahwa setiap kehidupan
-          berharga di hadapan Tuhan dan layak mendapatkan penghormatan terakhir
-          yang penuh hormat dan kasih.
+          Pelayanan Kedukaan hadir untuk mendampingi keluarga yang sedang berduka dengan kasih Kristus.
+          Kami percaya bahwa setiap kehidupan berharga di hadapan Tuhan dan layak mendapatkan penghormatan terakhir yang penuh kasih dan hormat.
         </p>
         <p>
-          Tim kami siap membantu mulai dari pengurusan administrasi, perizinan
-          pemakaman, hingga dukungan doa dan penghiburan rohani bagi keluarga
-          yang ditinggalkan. Kami juga melayani ibadah penghiburan di rumah
-          duka dan membantu koordinasi teknis dengan pihak pemakaman.
+          Melalui pelayanan ini, GBI Sirkuit Sentul siap membantu dalam setiap langkah proses kedukaan — mulai dari pengurusan administrasi, perizinan pemakaman, hingga dukungan doa dan penghiburan rohani bagi keluarga yang ditinggalkan.
         </p>
         <p>
-          Setiap pelayanan dijalankan dengan semangat empati, ketulusan, dan
-          harapan dalam Kristus bahwa setiap jiwa yang percaya telah memperoleh
-          kehidupan kekal.
+          Kami juga melayani ibadah penghiburan di rumah duka, serta membantu koordinasi teknis dengan pihak pemakaman agar seluruh proses berjalan dengan baik, tertib, dan penuh kasih.
         </p>
+        <P>
+          Setiap pelayanan dijalankan dengan semangat empati, ketulusan, dan pengharapan dalam Kristus, bahwa setiap jiwa yang percaya kepada-Nya telah memperoleh kehidupan yang kekal.
+        </P>
 
         {/* KONTAK TIM */}
         <div className="mt-12 p-8 bg-white rounded-2xl shadow-xl border-l-4 border-gray-700">
