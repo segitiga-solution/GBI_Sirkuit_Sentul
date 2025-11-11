@@ -346,15 +346,25 @@ export default function App() {
   >
     <div className="px-6 py-4 space-y-3">
       {["Beranda", "Tentang", "Jadwal", "Pelayanan", "Kontak"].map((item) => (
-        <a
-          key={item}
-          href={`#${item.toLowerCase()}`}
-          onClick={() => setIsMenuOpen(false)} // biar menu tertutup setelah diklik
-          className="block py-2 text-gray-700 hover:text-amber-600 font-medium"
-        >
-          {item}
-        </a>
-      ))}
+  <button
+    key={item}
+    onClick={() => {
+      setIsMenuOpen(false);
+      const sectionId = item.toLowerCase();
+      const el = document.getElementById(sectionId);
+      if (el) {
+        window.scrollTo({
+          top: el.offsetTop - 80, // biar gak ketutup navbar fixed
+          behavior: "smooth",
+        });
+      }
+    }}
+    className="block w-full text-left py-2 text-gray-700 hover:text-amber-600 font-medium"
+  >
+    {item}
+  </button>
+))}
+
     </div>
   </div>
 )}
