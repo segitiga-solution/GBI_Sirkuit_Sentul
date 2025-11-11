@@ -340,42 +340,34 @@ export default function App() {
 </div>
 
 {/* === MOBILE MENU === */}
+{/* MOBILE MENU */}
 {isMenuOpen && (
-  <div
-    className="md:hidden absolute top-20 left-0 w-full bg-white border-t border-gray-100 shadow-lg z-[9999]"
-  >
-    <div className="px-6 py-4 space-y-3">
-      {["Beranda", "Tentang", "Jadwal", "Pelayanan", "Kontak"].map((item) => {
-  const sectionId =
-    item === "Beranda"
-      ? "home"
-      : item.toLowerCase().replace(" ", "");
-
-  return (
-    <button
-      key={item}
-      onClick={() => {
-        setIsMenuOpen(false);
-        setTimeout(() => {
-          const el = document.getElementById(sectionId);
-          if (el) {
-            const y = el.getBoundingClientRect().top + window.scrollY - 80;
-            window.scrollTo({ top: y, behavior: "smooth" });
-          } else if (sectionId === "home") {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }
-        }, 300); // beri delay agar menu sempat menutup
-      }}
-      className="block w-full text-left py-2 text-gray-700 hover:text-amber-600 font-medium"
-    >
-      {item}
-    </button>
-  );
-})}
-
+  <div className="md:hidden bg-white border-t">
+    <div className="px-4 py-4 space-y-3">
+      {[
+        { label: "Beranda", target: "home" },
+        { label: "Tentang", target: "about" },
+        { label: "Jadwal", target: "schedule" },
+        { label: "Pelayanan", target: "ministries" },
+        { label: "Kontak", target: "contact" },
+      ].map((item) => (
+        <button
+          key={item.target}
+          onClick={() => {
+            document
+              .getElementById(item.target)
+              ?.scrollIntoView({ behavior: "smooth" });
+            setIsMenuOpen(false); // Tutup menu setelah klik
+          }}
+          className="block w-full text-left py-2 text-gray-700 hover:text-amber-600 font-medium"
+        >
+          {item.label}
+        </button>
+      ))}
     </div>
   </div>
 )}
+
 </nav>
 
 
