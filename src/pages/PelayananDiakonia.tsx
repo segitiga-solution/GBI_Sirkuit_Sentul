@@ -65,15 +65,12 @@ export default function PelayananDiakonia() {
           Tentang Pelayanan
         </h2>
         <p>
-          Pelayanan Diakonia merupakan wujud nyata kasih Kristus yang diwujudkan
-          melalui bantuan sosial, kunjungan, dan dukungan moral bagi jemaat
-          maupun masyarakat di sekitar gereja.
+          Pelayanan Diakonia adalah wujud nyata kasih Kristus yang menggerakkan kita untuk melayani sesama, terutama mereka yang membutuhkan bantuan, penghiburan, dan dukungan. Sebagaimana tertulis dalam Galatia 6:2,
+
+"Bertolong-tolonganlah menanggung bebanmu! Demikianlah kamu memenuhi hukum Kristus."
         </p>
         <p>
-          Kami percaya bahwa setiap tindakan kasih, sekecil apapun, dapat
-          membawa pengharapan baru bagi mereka yang membutuhkan. Melalui
-          pelayanan ini, gereja berperan aktif menjadi saluran berkat bagi
-          lingkungan sekitar.
+         Kami percaya bahwa setiap tindakan kasih — sekecil apa pun — memiliki makna besar di hadapan Tuhan (Matius 25:40). Melalui Pelayanan Diakonia, GBI Sirkuit Sentul rindu menjadi saluran kasih Allah dengan memberikan dukungan sosial, doa, serta kunjungan kepada jemaat maupun masyarakat yang membutuhkan penguatan rohani maupun materi.
         </p>
         <p>
           Program diakonia mencakup kegiatan berbagi kebutuhan pokok, pelayanan

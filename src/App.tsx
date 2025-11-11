@@ -16,6 +16,7 @@ import {
   Cross,
   Baby,
   HandHeart,
+  Waves,
 } from "lucide-react";
 
 import PastorProfile from "./pages/PastorProfile";
@@ -24,6 +25,8 @@ import PelayananKedukaan from "./pages/PelayananKedukaan";
 import PelayananPenyerahanAnak from './pages/PelayananPenyerahanAnak';
 import PelayananDiakonia from "./pages/PelayananDiakonia";
 import AboutSlideshow from "./pages/AboutSlideshow";
+import PelayananBaptisanAir from "./pages/BaptisanAir";
+
 
 
 
@@ -83,10 +86,19 @@ export default function App() {
       icon: HandHeart,
       title: "Pelayanan Diakonia",
       description:
-        "Menyalurkan kasih Kristus melalui bantuan sosial, kunjungan, dan dukungan bagi jemaat maupun masyarakat yang membutuhkan.",
+      "Menyalurkan kasih Kristus melalui bantuan sosial, kunjungan, dan dukungan bagi jemaat maupun masyarakat yang membutuhkan.",
       color: "bg-purple-50 text-purple-600",
       action: () => setCurrentPage("diakonia"),
     },
+    {
+       icon: Waves,
+       title: "Pelayanan Baptisan Air",
+       description:
+       "Membawa setiap orang percaya masuk dalam hidup baru di dalam Kristus melalui baptisan air.",
+       color: "bg-blue-50 text-blue-600",
+       action: () => setCurrentPage("baptisan"),
+    },
+
   ];
 
   // -------------------------
@@ -190,6 +202,18 @@ export default function App() {
     </div>
   );
 
+  if (currentPage === "baptisan")
+  return (
+    <div className="fixed inset-0 z-50 overflow-auto bg-white">
+      <button
+        onClick={() => setCurrentPage("home")}
+        className="fixed top-4 left-4 md:top-6 md:left-6 z-10 bg-gradient-to-br from-blue-700 to-blue-500 text-white shadow-lg rounded-full p-3 hover:shadow-xl transition-all"
+      >
+        <ArrowLeft className="h-6 w-6" />
+      </button>
+      <PelayananBaptisanAir />
+    </div>
+  );
 
 
   // -------------------------

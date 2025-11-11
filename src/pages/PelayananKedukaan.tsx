@@ -75,9 +75,9 @@ export default function PelayananKedukaan() {
         <p>
           Kami juga melayani ibadah penghiburan di rumah duka, serta membantu koordinasi teknis dengan pihak pemakaman agar seluruh proses berjalan dengan baik, tertib, dan penuh kasih.
         </p>
-        <P>
+        <p>
           Setiap pelayanan dijalankan dengan semangat empati, ketulusan, dan pengharapan dalam Kristus, bahwa setiap jiwa yang percaya kepada-Nya telah memperoleh kehidupan yang kekal.
-        </P>
+        </p>
 
         {/* KONTAK TIM */}
         <div className="mt-12 p-8 bg-white rounded-2xl shadow-xl border-l-4 border-gray-700">

@@ -21,7 +21,7 @@ export default function PelayananPenyerahanAnak() {
             Pelayanan Penyerahan Anak
           </h1>
           <p className="text-lg text-pink-100 leading-relaxed">
-            Mendoakan dan menyerahkan anak-anak kepada Tuhan agar hidup mereka senantiasa dalam kasih dan penyertaan-Nya sejak dini.
+            Untuk mendapat anak inilah aku berdoa, dan Tuhan telah memberikan kepadaku apa yang kuminta dari pada-Nya. Maka aku pun menyerahkannya kepada Tuhan; seumur hidup terserahlah ia kepada Tuhan. (1 Samuel 1:27–28)
           </p>
         </div>
       </section>
@@ -61,10 +61,9 @@ export default function PelayananPenyerahanAnak() {
           Tentang Pelayanan
         </h2>
         <p>
-          Pelayanan Penyerahan Anak adalah momen penuh makna di mana orang tua menyerahkan kehidupan anak-anak mereka kepada Tuhan, percaya bahwa sejak awal kehidupan, mereka hidup dalam penyertaan dan kasih karunia-Nya.
-        </p>
+          Pelayanan Penyerahan Anak adalah momen kudus dan penuh sukacita di mana orang tua membawa anak-anak mereka untuk diserahkan kepada Tuhan sebagai ungkapan syukur dan komitmen iman. Kami percaya bahwa setiap anak adalah anugerah dan pusaka dari Tuhan (Mazmur 127:3), dan sejak awal kehidupan mereka, Tuhan telah menaruh rancangan yang indah atas masa depannya.        </p>
         <p>
-          Kami mendampingi keluarga dalam proses penyerahan anak melalui ibadah doa dan pengajaran firman Tuhan yang menguatkan dasar iman keluarga Kristen.
+          GBI Sirkuit Sentul siap mendampingi setiap keluarga yang rindu mempersembahkan anak-anak mereka kepada Tuhan — agar mereka tumbuh dalam kasih, iman, dan pengharapan di dalam Kristus.
         </p>
         <p>
           Pelayanan ini terbuka bagi setiap keluarga jemaat yang rindu mempersembahkan anak mereka kepada Tuhan dengan keyakinan bahwa Ia akan menuntun langkah mereka sejak dini.
