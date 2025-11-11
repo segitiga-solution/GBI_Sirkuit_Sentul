@@ -311,56 +311,55 @@ export default function App() {
             </div>
 
             {/* DESKTOP MENU */}
-            <div className="hidden md:flex space-x-8 font-medium">
-              <a href="#home" className="hover:text-amber-600">
-                Beranda
-              </a>
-              <a href="#about" className="hover:text-amber-600">
-                Tentang
-              </a>
-              <a href="#schedule" className="hover:text-amber-600">
-                Jadwal
-              </a>
-              <a href="#ministries" className="hover:text-amber-600">
-                Pelayanan
-              </a>
-              <a href="#contact" className="hover:text-amber-600">
-                Kontak
-              </a>
-            </div>
+<div className="hidden md:flex space-x-8 font-medium">
+  <a href="#home" className="hover:text-amber-600">
+    Beranda
+  </a>
+  <a href="#about" className="hover:text-amber-600">
+    Tentang
+  </a>
+  <a href="#schedule" className="hover:text-amber-600">
+    Jadwal
+  </a>
+  <a href="#ministries" className="hover:text-amber-600">
+    Pelayanan
+  </a>
+  <a href="#contact" className="hover:text-amber-600">
+    Kontak
+  </a>
+</div>
 
-            {/* MOBILE MENU BUTTON */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-gray-100"
-            >
-              {isMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
-            </button>
-          </div>
-        </div>
+{/* MOBILE MENU BUTTON */}
+<button
+  onClick={() => setIsMenuOpen(!isMenuOpen)}
+  className="md:hidden p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-amber-400"
+>
+  {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+</button>
+</div>
+</div>
 
-        {isMenuOpen && (
-          <div className="md:hidden bg-white border-t">
-            <div className="px-4 py-4 space-y-3">
-              {["Beranda", "Tentang", "Jadwal", "Pelayanan", "Kontak"].map(
-                (item) => (
-                  <a
-                    key={item}
-                    href={`#${item.toLowerCase()}`}
-                    className="block py-2 text-gray-700 hover:text-amber-600 font-medium"
-                  >
-                    {item}
-                  </a>
-                )
-              )}
-            </div>
-          </div>
-        )}
-      </nav>
+{/* === MOBILE MENU === */}
+{isMenuOpen && (
+  <div
+    className="md:hidden absolute top-20 left-0 w-full bg-white border-t border-gray-100 shadow-lg z-[9999]"
+  >
+    <div className="px-6 py-4 space-y-3">
+      {["Beranda", "Tentang", "Jadwal", "Pelayanan", "Kontak"].map((item) => (
+        <a
+          key={item}
+          href={`#${item.toLowerCase()}`}
+          onClick={() => setIsMenuOpen(false)} // biar menu tertutup setelah diklik
+          className="block py-2 text-gray-700 hover:text-amber-600 font-medium"
+        >
+          {item}
+        </a>
+      ))}
+    </div>
+  </div>
+)}
+</nav>
+
 
       {/* ======= HOME ======= */}
       <section

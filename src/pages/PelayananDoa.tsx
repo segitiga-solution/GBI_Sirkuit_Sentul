@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 export default function PelayananDoa() {
   const [currentImage, setCurrentImage] = useState(0);
 
-  const images = ["/doa1.jpeg", "/doa2.jpeg"];
+  const images = ["/doa.JPEG","/doa2.JPEG"];
 
   useEffect(() => {
     const interval = setInterval(() => {
