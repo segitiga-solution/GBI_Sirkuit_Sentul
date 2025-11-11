@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 export default function PelayananCommunityOfLove() {
   const [currentImage, setCurrentImage] = useState(0);
 
-  const images = ["/community1.jpeg", "/community2.jpeg"];
+  const images = ["/cool.jpeg", "/cool2.jpeg"];
 
   useEffect(() => {
     const interval = setInterval(() => {
