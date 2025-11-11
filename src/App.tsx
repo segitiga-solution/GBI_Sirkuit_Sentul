@@ -17,6 +17,7 @@ import {
   Baby,
   HandHeart,
   Waves,
+  Handshake,
 } from "lucide-react";
 
 import PastorProfile from "./pages/PastorProfile";
@@ -27,8 +28,7 @@ import PelayananDiakonia from "./pages/PelayananDiakonia";
 import AboutSlideshow from "./pages/AboutSlideshow";
 import PelayananBaptisanAir from "./pages/BaptisanAir";
 import PelayananPemberkatanPernikahan from "./pages/PemberkatanPernikahan";
-
-
+import PelayananKonseling from "./pages/Konseling";
 
 
 
@@ -57,11 +57,12 @@ export default function App() {
       action: () => setCurrentPage("pernikahan"),
     },
     {
-      icon: BookOpen,
-      title: "Pelayanan Literatur",
+      icon: Handshake,
+      title: "Konseling",
       description:
-        "Memperlengkapi jemaat dengan pengetahuan firman Tuhan dan bahan rohani.",
+        "Menolong setiap jemaat yang sedang menghadapi pergumulan hidup, agar menemukan kekuatan, penghiburan, dan arah melalui Firman Tuhan.",
       color: "bg-blue-50 text-blue-600",
+      action: () => setCurrentPage("konseling"),
     },
     {
       icon: Church,
@@ -228,6 +229,19 @@ export default function App() {
         <ArrowLeft className="h-6 w-6" />
       </button>
       <PelayananPemberkatanPernikahan />
+    </div>
+  );
+
+    if (currentPage === "konseling")
+  return (
+    <div className="fixed inset-0 z-50 overflow-auto bg-white">
+      <button
+        onClick={() => setCurrentPage("home")}
+        className="fixed top-4 left-4 md:top-6 md:left-6 z-10 bg-gradient-to-br from-blue-600 to-blue-500 text-white shadow-lg rounded-full p-3 hover:shadow-xl transition-all"
+      >
+        <ArrowLeft className="h-6 w-6" />
+      </button>
+      <PelayananKonseling />
     </div>
   );
 
