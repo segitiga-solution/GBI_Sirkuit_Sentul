@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 export default function PelayananKonseling() {
   const [currentImage, setCurrentImage] = useState(0);
 
-  const images = ["/konseling1.jpeg", "/konseling2.jpeg"];
+  const images = ["/konseling.jpeg"];
 
   useEffect(() => {
     const interval = setInterval(() => {
