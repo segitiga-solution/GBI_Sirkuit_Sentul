@@ -36,13 +36,14 @@ export default function PelayananPemberkatanPernikahan() {
         <div className="relative w-full aspect-[21/9] sm:aspect-[16/9] md:aspect-[4/3] rounded-2xl overflow-hidden shadow-xl bg-gray-200">
           {images.map((img, index) => (
             <img
-              key={index}
-              src={img}
-              alt={`Foto ${index + 1}`}
-              className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out ${
-                index === currentImage ? "opacity-100" : "opacity-0"
-              }`}
+             key={index}
+             src={img}
+             alt={`Foto ${index + 1}`}
+             className={`absolute inset-0 w-full h-full object-contain sm:object-cover object-center transition-opacity duration-1000 ease-in-out ${
+             index === currentImage ? "opacity-100" : "opacity-0"
+             }`}
             />
+
           ))}
 
           {/* OVERLAY */}
