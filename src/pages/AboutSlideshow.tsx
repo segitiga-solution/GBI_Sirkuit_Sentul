@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 export default function AboutSlideshow() {
   const [currentImage, setCurrentImage] = useState(0);
 
-  const images = ["/gereja1.jpg", "/gereja2.jpg", "/gereja3.jpg"];
+  const images = ["/gereja1.jpg", "/gereja2.jpg", "/gereja3.jpg","/gereja4.jpeg","/gereja5.jpeg"];
 
   useEffect(() => {
     const interval = setInterval(() => {
