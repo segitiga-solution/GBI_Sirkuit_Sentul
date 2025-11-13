@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 export default function PelayananPemberkatanPernikahan() {
   const [currentImage, setCurrentImage] = useState(0);
 
-  const images = ["/pemberkatan.jpeg"];
+  const images = ["/pemberkatan2.jpeg"];
 
   useEffect(() => {
     const interval = setInterval(() => {
