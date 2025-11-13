@@ -32,35 +32,38 @@ export default function PelayananBaptisanAir() {
       </section>
 
       {/* SLIDESHOW FOTO */}
-      <section className="max-w-4xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
-        <div className="relative w-full aspect-[21/9] sm:aspect-[16/9] md:aspect-[4/3] rounded-2xl overflow-hidden shadow-xl bg-blue-200">
-          {images.map((img, index) => (
-            <img
-              key={index}
-              src={img}
-              alt={`Foto Baptisan ${index + 1}`}
-              className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out ${
-                index === currentImage ? "opacity-100" : "opacity-0"
-              }`}
-            />
-          ))}
+<section className="max-w-5xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
+  <div className="relative w-full h-[240px] sm:h-[340px] md:h-[460px] rounded-md overflow-hidden shadow-md bg-gray-200">
 
-          {/* Overlay gradient */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent"></div>
+    {images.map((img, index) => (
+      <img
+        key={index}
+        src={img}
+        alt={`Foto ${index + 1}`}
+        className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out ${
+          index === currentImage ? "opacity-100" : "opacity-0"
+        }`}
+      />
+    ))}
 
-          {/* Indikator */}
-          <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
-            {images.map((_, i) => (
-              <span
-                key={i}
-                className={`w-3 h-3 rounded-full transition-all duration-500 ${
-                  i === currentImage ? "bg-white scale-110" : "bg-blue-300 opacity-70"
-                }`}
-              ></span>
-            ))}
-          </div>
-        </div>
-      </section>
+    {/* Overlay lembut di bawah */}
+    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+
+    {/* Indikator bulatan */}
+    <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+      {images.map((_, i) => (
+        <span
+          key={i}
+          className={`w-2.5 h-2.5 rounded-full transition-all duration-500 ${
+            i === currentImage
+              ? "bg-white scale-110"
+              : "bg-gray-400 opacity-70"
+          }`}
+        ></span>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* ISI KONTEN */}
       <section className="max-w-5xl mx-auto px-6 py-12 space-y-6 leading-relaxed text-lg">
