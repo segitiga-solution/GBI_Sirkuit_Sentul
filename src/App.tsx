@@ -37,6 +37,119 @@ import PelayananDoa from "./pages/PelayananDoa";
 
 import { useActiveSection } from "./hooks/useActiveSection";
 import { useEffect } from "react";
+
+
+// === FLYER PREMIUM COMPONENT ===
+function FlyerCarousel() {
+  const flyers = [
+    "/flyer-pengkhotbah.jpeg", // ganti sesuai file flyer
+  ];
+
+  const [index, setIndex] = useState(0);
+  const [fade, setFade] = useState(true);
+
+  const next = () => {
+    setFade(false);
+    setTimeout(() => {
+      setIndex((prev) => (prev + 1) % flyers.length);
+      setFade(true);
+    }, 150);
+  };
+
+  const prev = () => {
+    setFade(false);
+    setTimeout(() => {
+      setIndex((prev) => (prev - 1 + flyers.length) % flyers.length);
+      setFade(true);
+    }, 150);
+  };
+
+  // Auto slide only if more than 1 flyer
+  useEffect(() => {
+    if (flyers.length <= 1) return;
+
+    const auto = setInterval(next, 6000);
+    return () => clearInterval(auto);
+  }, [flyers.length]);
+
+  return (
+    <div className="relative w-full flex flex-col items-center">
+      {/* FRAME PREMIUM */}
+      <div className="
+        overflow-hidden rounded-2xl md:rounded-3xl shadow-xl 
+        bg-gradient-to-br from-amber-50 to-white border border-amber-200/70
+        w-full max-w-xl mx-auto
+      ">
+        {/* IMAGE */}
+        <img
+          key={index}
+          src={flyers[index]}
+          alt="Flyer Pengkhotbah"
+          className={`
+            w-full object-contain p-4 md:p-6 transition-opacity duration-700
+            ${fade ? "opacity-100" : "opacity-0"}
+          `}
+        />
+      </div>
+
+      {/* CONTROLS */}
+      {flyers.length > 1 && (
+        <>
+          {/* LEFT BUTTON */}
+          <button
+            onClick={prev}
+            className="
+              absolute top-1/2 left-4 transform -translate-y-1/2
+              bg-white/90 hover:bg-white text-gray-700 w-10 h-10 rounded-full
+              shadow-lg flex items-center justify-center backdrop-blur-sm
+              transition-all hover:scale-110
+            "
+          >
+            ‹
+          </button>
+
+          {/* RIGHT BUTTON */}
+          <button
+            onClick={next}
+            className="
+              absolute top-1/2 right-4 transform -translate-y-1/2
+              bg-white/90 hover:bg-white text-gray-700 w-10 h-10 rounded-full
+              shadow-lg flex items-center justify-center backdrop-blur-sm
+              transition-all hover:scale-110
+            "
+          >
+            ›
+          </button>
+
+          {/* INDICATORS */}
+          <div className="flex justify-center mt-4 space-x-2">
+            {flyers.map((_, i) => (
+              <div
+                key={i}
+                onClick={() => {
+                  setFade(false);
+                  setTimeout(() => {
+                    setIndex(i);
+                    setFade(true);
+                  }, 150);
+                }}
+                className={`
+                  w-3 h-3 rounded-full cursor-pointer transition-all
+                  ${i === index 
+                    ? "bg-amber-600 scale-125" 
+                    : "bg-gray-300 hover:bg-gray-400"}
+                `}
+              ></div>
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
+
+
 // ... existing imports
 
 export default function App() {
@@ -531,6 +644,18 @@ export default function App() {
           </div>
         </div>
       </section>
+
+      {/* ======= FLYER PENGKHOTBAH (PREMIUM) ======= */}
+<section className="py-24 bg-gradient-to-b from-white to-amber-50">
+  <div className="max-w-4xl mx-auto px-4 text-center">
+    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12">
+      Pengkhotbah Minggu Ini
+    </h2>
+
+    <FlyerCarousel />
+  </div>
+</section>
+
 
       {/* ======= PELAYANAN ======= */}
       <section id="ministries" className="py-24 bg-white">
