@@ -120,15 +120,14 @@ export default function InvitationPage() {
           className="text-center py-28 px-4 text-white"
         >
           <p className="uppercase tracking-widest text-amber-300 font-semibold mb-4">
-            Undangan Ibadah
+            You are Invited to
           </p>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Christmas Sunday Service
-            <span className="block text-amber-400">GBI Sirkuit Sentul</span>
+            GBI Sirkuit Sentul
+            <span className="block text-amber-400">Christmas Celebration</span>
           </h1>
           <p className="max-w-2xl mx-auto text-lg text-white/90">
-            Kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan beribadah bersama
-            kami dalam kasih Tuhan.
+            "Bersyukurlah kepada TUHAN, sebab la baik! Bahwasanya untuk selama-lamanya kasih setia-Nya - 1 Tawarikh 16:34."
           </p>
         </motion.section>
 
