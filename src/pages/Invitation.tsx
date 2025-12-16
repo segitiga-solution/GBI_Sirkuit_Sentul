@@ -87,7 +87,7 @@ export default function InvitationPage() {
     const nama = (form.nama as HTMLInputElement).value;
     const jumlah = (form.jumlah as HTMLInputElement).value;
 
-    await fetch("https://script.google.com/macros/s/ISI_SCRIPT_GOOGLE_SHEET/exec", {
+    await fetch("https://script.google.com/macros/s/AKfycbzRig8LrmNwh_GeUuMFAx-A8uPt2NNmf8a_ZGJgctSK6UBflnybxhb8zafjlGrzTDbxtw/exec", {
       method: "POST",
       mode: "no-cors",
       headers: { "Content-Type": "application/json" },
