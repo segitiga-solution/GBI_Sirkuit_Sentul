@@ -34,6 +34,12 @@ import PelayananPemberkatanPernikahan from "./pages/PemberkatanPernikahan";
 import PelayananKonseling from "./pages/Konseling";
 import PelayananCommunityOfLove from "./pages/cool";
 import PelayananDoa from "./pages/PelayananDoa";
+import InvitationPage from "./pages/Invitation";
+
+
+
+
+
 
 import { useActiveSection } from "./hooks/useActiveSection";
 import { useEffect } from "react";
