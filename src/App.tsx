@@ -662,6 +662,29 @@ export default function App() {
   </div>
 </section>
 
+{/* ======= FLIPBOOK ANYFLIP ======= */}
+<section className="py-24 bg-white">
+  <div className="max-w-5xl mx-auto px-4 text-center">
+    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12">
+      Penyembahan yang Sejati
+    </h2>
+
+    {/* Responsive iframe wrapper */}
+    <div className="relative w-full overflow-hidden rounded-2xl shadow-xl border">
+      <div className="relative w-full" style={{ paddingTop: "64%" }}>
+        <iframe
+          src="https://online.anyflip.com/foen/fvki/index.html"
+          title="Penyembahan yang Sejati"
+          className="absolute top-0 left-0 w-full h-full"
+          frameBorder="0"
+          scrolling="no"
+          allowFullScreen
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* ======= PELAYANAN ======= */}
       <section id="ministries" className="py-24 bg-white">
