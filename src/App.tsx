@@ -859,7 +859,6 @@ export default function App() {
             </div>
             <div>
               <p className="font-bold text-white">GBI Sirkuit Sentul</p>
-              <p className="text-sm">Gereja Bethel Indonesia</p>
             </div>
           </div>
           <p className="text-sm">
