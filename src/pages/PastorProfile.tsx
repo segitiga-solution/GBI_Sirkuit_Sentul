@@ -7,7 +7,9 @@ export default function PastorProfile() {
   const images = [
     "/papi-mami.jpeg",
     "/papikeluarga.jpeg",
-    "/papi-mami3.jpeg" // ubah nama file sesuai di folder public kamu
+    "/papi-mami3.jpeg",
+    "/papi4.jpeg",
+    "papi5.jpeg" // ubah nama file sesuai di folder public kamu
   ];
 
   // Ganti foto otomatis setiap 4 detik
