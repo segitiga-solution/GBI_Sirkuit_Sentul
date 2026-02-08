@@ -216,8 +216,14 @@ const churchVideos = [
     category: "Event Khusus",
     youtubeId: "X95dDWLrDzM",
   },
-]
 
+  {
+    title: "Utus Aku | Khotbah Firman Tuhan – Pdm. Sandra Suharsa",
+    date: "1 Februari 2026",
+    category: "Khotbah",
+    youtubeId: "ERQtUoPpFnc",
+  },
+]
 
   const ministries = [
     {
