@@ -206,6 +206,19 @@ export default function App() {
     { day: "Minggu", time: "09:00 WIB", service: "Sekolah Minggu" },
   ];
 
+/* ===============================
+   YOUTUBE KEGIATAN & KHOTBAH
+================================ */
+const churchVideos = [
+  {
+    title: "Acara Natal 2025",
+    date: "25 Desember 2025",
+    category: "Event Khusus",
+    youtubeId: "X95dDWLrDzM",
+  },
+]
+
+
   const ministries = [
     {
       icon: HandHelping,
@@ -616,6 +629,60 @@ export default function App() {
   </div>
 </section>
 
+{/* ======= KEGIATAN & KHOTBAH (YOUTUBE) ======= */}
+<section className="py-24 bg-gradient-to-br from-blue-50 to-white">
+  <div className="max-w-7xl mx-auto px-4 text-center">
+    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12">
+      Kegiatan & Khotbah
+    </h2>
+
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {churchVideos.map((video, i) => (
+        <div
+          key={i}
+          className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all border border-gray-100 overflow-hidden"
+        >
+          {/* YOUTUBE */}
+          <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
+            <iframe
+              src={`https://www.youtube.com/embed/${video.youtubeId}`}
+              title={video.title}
+              className="absolute top-0 left-0 w-full h-full"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+
+          {/* INFO */}
+          <div className="p-6 text-left">
+            <span className="text-xs font-semibold text-amber-600">
+              {video.category}
+            </span>
+
+            <h3 className="text-lg font-bold text-gray-900 mt-2">
+              {video.title}
+            </h3>
+
+            <p className="text-sm text-gray-500 mt-1">
+              {video.date}
+            </p>
+
+            <a
+              href={`https://www.youtube.com/watch?v=${video.youtubeId}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-4 text-amber-600 font-medium hover:underline"
+            >
+              Tonton di YouTube →
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* ======= JADWAL ======= */}
       <section
@@ -661,6 +728,7 @@ export default function App() {
     <FlyerCarousel />
   </div>
 </section>
+
 
 {/* ======= FLIPBOOK ANYFLIP ======= */}
 <section className="py-24 bg-white">
