@@ -223,7 +223,7 @@ const churchVideos = [
     youtubeId: "ERQtUoPpFnc",
   },
   {
-    title: "Proses Pemurnian | Khotbah Firman Tuhan – PDT. Martha Kurniawan",
+    title: "Proses Pemurnian | Khotbah Firman Tuhan – Pdt. Martha Kurniawan",
     date: "8 Februari 2026",
     category: "Khotbah",
     youtubeId: "bdV6fVolGf4",
