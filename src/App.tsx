@@ -211,10 +211,10 @@ export default function App() {
 ================================ */
 const churchVideos = [
   {
-    title: "Acara Natal 2025",
-    date: "25 Desember 2025",
-    category: "Event Khusus",
-    youtubeId: "X95dDWLrDzM",
+    title: "Refleksi | Khotbah Firman Tuhan - Pdm. Sandy Suharsa",
+    date: "1 Maret 2026",
+    category: "Khotbah",
+    youtubeId: "oQWY7JixHls",
   },
   {
     title: "Utus Aku | Khotbah Firman Tuhan – Pdm. Sandra Suharsa",
