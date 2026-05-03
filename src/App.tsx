@@ -776,7 +776,7 @@ const churchVideos = [
     <div className="relative w-full overflow-hidden rounded-2xl shadow-xl border">
       <div className="relative w-full" style={{ paddingTop: "64%" }}>
         <iframe
-          src="https://online.anyflip.com/foen/fvki/index.html"
+          src="https://anyflip.com/foen/qcyv"
           title="Penyembahan yang Sejati"
           className="absolute top-0 left-0 w-full h-full"
           frameBorder="0"
