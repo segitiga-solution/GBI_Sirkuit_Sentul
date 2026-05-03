@@ -228,6 +228,24 @@ const churchVideos = [
     category: "Khotbah",
     youtubeId: "bdV6fVolGf4",
   },
+  {
+    title: "The Year of The Great Commission | Khotbah EV Hokke Andrian J",
+    date: "29 Maret 2026",
+    category: "Khotbah",
+    youtubeId: "qeiI9XhJrVs",
+  },
+  {
+    title: "Pdt. Matius Ginting | Mujizat Paskah",
+    date: "19 April 2026",
+    category: "Khotbah",
+    youtubeId: "rDoPFxlCGHA",
+  },
+  {
+    title: "EV. Hendri J Pandiangan | Kematian dan Kebangkitan Tuhan Yesus Kristus",
+    date: "26 April 2026",
+    category: "Khotbah",
+    youtubeId: "dN8X_K8USaQ",
+  },
 ]
 
   const ministries = [
