@@ -235,6 +235,12 @@ const churchVideos = [
     youtubeId: "qeiI9XhJrVs",
   },
   {
+    title: "Pdt. Ivonne Ahimsa | Perlindungan Gembala",
+    date: "12 April 2026",
+    category: "Khotbah",
+    youtubeId: "Dd1Iz-Jze7k",
+  },
+  {
     title: "Pdt. Matius Ginting | Mujizat Paskah",
     date: "19 April 2026",
     category: "Khotbah",
