@@ -769,7 +769,7 @@ const churchVideos = [
 <section className="py-24 bg-white">
   <div className="max-w-5xl mx-auto px-4 text-center">
     <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12">
-      Penyembahan yang Sejati
+      Renungan khusus komunitas profesional yang memuridkan
     </h2>
 
     {/* Responsive iframe wrapper */}
@@ -777,7 +777,7 @@ const churchVideos = [
       <div className="relative w-full" style={{ paddingTop: "64%" }}>
         <iframe
           src="https://anyflip.com/foen/qcyv"
-          title="Penyembahan yang Sejati"
+          title="Renungan khusus komunitas profesional yang memuridkan"
           className="absolute top-0 left-0 w-full h-full"
           frameBorder="0"
           scrolling="no"
