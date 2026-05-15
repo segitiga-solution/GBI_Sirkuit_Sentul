@@ -211,34 +211,22 @@ export default function App() {
 ================================ */
 const churchVideos = [
   {
-    title: "Refleksi | Khotbah Firman Tuhan - Pdm. Sandy Suharsa",
-    date: "1 Maret 2026",
+    title: "Pdm. Sandra Suharsa | Warisan",
+    date: "14 Mei 2026",
     category: "Khotbah",
-    youtubeId: "oQWY7JixHls",
+    youtubeId: "OJg8ZRBc5bA",
   },
   {
-    title: "Utus Aku | Khotbah Firman Tuhan – Pdm. Sandra Suharsa",
-    date: "1 Februari 2026",
+    title: "Ev. Rudi Hidayat | Rooted",
+    date: "10 Mei 2026",
     category: "Khotbah",
-    youtubeId: "ERQtUoPpFnc",
+    youtubeId: "Sd0DIxIzZwY",
   },
   {
-    title: "Proses Pemurnian | Khotbah Firman Tuhan – Pdt. Martha Kurniawan",
-    date: "8 Februari 2026",
+    title: "EV. Hendri J Pandiangan | Kematian dan Kebangkitan Tuhan Yesus Kristus",
+    date: "26 April 2026",
     category: "Khotbah",
-    youtubeId: "bdV6fVolGf4",
-  },
-  {
-    title: "The Year of The Great Commission | Khotbah EV Hokke Andrian J",
-    date: "29 Maret 2026",
-    category: "Khotbah",
-    youtubeId: "qeiI9XhJrVs",
-  },
-  {
-    title: "Pdt. Ivonne Ahimsa | Perlindungan Gembala",
-    date: "12 April 2026",
-    category: "Khotbah",
-    youtubeId: "Dd1Iz-Jze7k",
+    youtubeId: "dN8X_K8USaQ",
   },
   {
     title: "Pdt. Matius Ginting | Mujizat Paskah",
@@ -247,10 +235,34 @@ const churchVideos = [
     youtubeId: "rDoPFxlCGHA",
   },
   {
-    title: "EV. Hendri J Pandiangan | Kematian dan Kebangkitan Tuhan Yesus Kristus",
-    date: "26 April 2026",
+    title: "Pdt. Ivonne Ahimsa | Perlindungan Gembala",
+    date: "12 April 2026",
     category: "Khotbah",
-    youtubeId: "dN8X_K8USaQ",
+    youtubeId: "Dd1Iz-Jze7k",
+  },
+  {
+    title: "The Year of The Great Commission | Khotbah EV Hokke Andrian J",
+    date: "29 Maret 2026",
+    category: "Khotbah",
+    youtubeId: "qeiI9XhJrVs",
+  },
+  {
+    title: "Refleksi | Khotbah Firman Tuhan - Pdm. Sandy Suharsa",
+    date: "1 Maret 2026",
+    category: "Khotbah",
+    youtubeId: "oQWY7JixHls",
+  },
+  {
+    title: "Proses Pemurnian | Khotbah Firman Tuhan – Pdt. Martha Kurniawan",
+    date: "8 Februari 2026",
+    category: "Khotbah",
+    youtubeId: "bdV6fVolGf4",
+  },
+  {
+    title: "Utus Aku | Khotbah Firman Tuhan – Pdm. Sandra Suharsa",
+    date: "1 Februari 2026",
+    category: "Khotbah",
+    youtubeId: "ERQtUoPpFnc",
   },
 ]
 
