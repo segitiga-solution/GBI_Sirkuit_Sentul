@@ -258,18 +258,6 @@ const churchVideos = [
     category: "Khotbah",
     youtubeId: "oQWY7JixHls",
   },
-  {
-    title: "Proses Pemurnian | Khotbah Firman Tuhan – Pdt. Martha Kurniawan",
-    date: "8 Februari 2026",
-    category: "Khotbah",
-    youtubeId: "bdV6fVolGf4",
-  },
-  {
-    title: "Utus Aku | Khotbah Firman Tuhan – Pdm. Sandra Suharsa",
-    date: "1 Februari 2026",
-    category: "Khotbah",
-    youtubeId: "ERQtUoPpFnc",
-  },
 ]
 
   const ministries = [
