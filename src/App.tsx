@@ -223,6 +223,12 @@ const churchVideos = [
     youtubeId: "Sd0DIxIzZwY",
   },
   {
+    title: "Pdt. Abed Purnomo | Membangkitkan Iman",
+    date: "3 Mei 2026",
+    category: "Khotbah",
+    youtubeId: "xuJhHSXwhgw",
+  },
+  {
     title: "EV. Hendri J Pandiangan | Kematian dan Kebangkitan Tuhan Yesus Kristus",
     date: "26 April 2026",
     category: "Khotbah",
