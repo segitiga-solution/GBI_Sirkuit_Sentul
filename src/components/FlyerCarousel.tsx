@@ -1,24 +1,17 @@
 import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
-const flyers = [
-  "/flyer-pengkhotbah.jpeg",
-  "/flyer-pengkhotbah3.jpeg",
-  "/flyer-pengkhotbah4.jpeg",
-  "/flyer-pengkhotbah5.jpeg",
-  "/flyer-pengkhotbah6.jpeg",
-  "/flyer-pengkhotbah7.png",
-  "/flyer-pengkhotbah8.jpeg",
-  "/flyer-pengkhotbah9.jpeg",
-  "/flyer-pengkhotbah10.jpeg",
-  "/flyer-pengkhotbah11.jpeg",
-  "/flyer-pengkhotbah12.jpeg",
-  "/flyer-pengkhotbah13.jpeg",
-];
+import { useContent } from "../data/content";
 
 export default function FlyerCarousel() {
+  const [content] = useContent();
+  const flyers = content.flyers.length > 0 ? content.flyers : ["/flyer-pengkhotbah.jpeg"];
   const [index, setIndex] = useState(0);
   const [fade, setFade] = useState(true);
+
+  // jaga agar index tidak keluar rentang saat daftar flyer berubah
+  useEffect(() => {
+    if (index >= flyers.length) setIndex(0);
+  }, [flyers.length]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const goTo = (next: number) => {
     setFade(false);
@@ -38,7 +31,7 @@ export default function FlyerCarousel() {
       }, 200);
     }, 7000);
     return () => clearInterval(auto);
-  }, []);
+  }, [flyers.length]);
 
   return (
     <div className="relative w-full flex flex-col items-center">

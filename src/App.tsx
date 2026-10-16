@@ -37,77 +37,13 @@ import PelayananCommunityOfLove from "./pages/cool";
 import PelayananDoa from "./pages/PelayananDoa";
 import FlyerCarousel from "./components/FlyerCarousel";
 import { Reveal, SectionHeading, PageShell } from "./components/ui";
+import { useContent, type VideoItem } from "./data/content";
 
 import { useActiveSection } from "./hooks/useActiveSection";
 
 /* ===============================
-   DATA
+   DATA (ministries statis; konten khotbah/jadwal/flyer dikelola via /#/admin)
 ================================ */
-const schedules = [
-  {
-    day: "Minggu",
-    time: "09:00 WIB",
-    service: "Ibadah Umum",
-    note: "Ibadah raya seluruh jemaat setiap Minggu pagi",
-  },
-  {
-    day: "Minggu",
-    time: "09:00 WIB",
-    service: "Sekolah Minggu",
-    note: "Pembinaan iman anak-anak sejak usia dini",
-  },
-];
-
-const churchVideos = [
-  {
-    title: "Pdm. Sandra Suharsa | Warisan",
-    date: "14 Mei 2026",
-    category: "Khotbah",
-    youtubeId: "OJg8ZRBc5bA",
-  },
-  {
-    title: "Ev. Rudi Hidayat | Rooted",
-    date: "10 Mei 2026",
-    category: "Khotbah",
-    youtubeId: "Sd0DIxIzZwY",
-  },
-  {
-    title: "Pdt. Abed Purnomo | Membangkitkan Iman",
-    date: "3 Mei 2026",
-    category: "Khotbah",
-    youtubeId: "xuJhHSXwhgw",
-  },
-  {
-    title: "EV. Hendri J Pandiangan | Kematian dan Kebangkitan Tuhan Yesus Kristus",
-    date: "26 April 2026",
-    category: "Khotbah",
-    youtubeId: "dN8X_K8USaQ",
-  },
-  {
-    title: "Pdt. Matius Ginting | Mujizat Paskah",
-    date: "19 April 2026",
-    category: "Khotbah",
-    youtubeId: "rDoPFxlCGHA",
-  },
-  {
-    title: "Pdt. Ivonne Ahimsa | Perlindungan Gembala",
-    date: "12 April 2026",
-    category: "Khotbah",
-    youtubeId: "Dd1Iz-Jze7k",
-  },
-  {
-    title: "The Year of The Great Commission | Khotbah EV Hokke Andrian J",
-    date: "29 Maret 2026",
-    category: "Khotbah",
-    youtubeId: "qeiI9XhJrVs",
-  },
-  {
-    title: "Refleksi | Khotbah Firman Tuhan - Pdm. Sandy Suharsa",
-    date: "1 Maret 2026",
-    category: "Khotbah",
-    youtubeId: "oQWY7JixHls",
-  },
-];
 
 const ministries = [
   {
@@ -190,7 +126,7 @@ let setCurrentPageStatic: (page: string) => void = () => {};
 /* ===============================
    VIDEO CARD (lazy iframe)
 ================================ */
-function VideoCard({ video }: { video: (typeof churchVideos)[number] }) {
+function VideoCard({ video }: { video: VideoItem }) {
   const [play, setPlay] = useState(false);
   return (
     <div className="group bg-white rounded-3xl shadow-soft hover:shadow-premium transition-all duration-300 border border-slate-100 overflow-hidden h-full flex flex-col">
@@ -250,6 +186,10 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [currentPage, setCurrentPage] = useState("home");
+  const [content] = useContent();
+
+  // video yang tampil di grid "Kegiatan & Khotbah": khotbah + kegiatan, terbaru dulu
+  const messageVideos = [...content.sermons, ...content.activities];
 
   // hubungkan helper statis dengan state ini
   setCurrentPageStatic = setCurrentPage;
@@ -655,8 +595,8 @@ export default function App() {
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {churchVideos.map((video, i) => (
-              <Reveal key={i} delay={(i % 3) * 120}>
+            {messageVideos.map((video, i) => (
+              <Reveal key={`${video.youtubeId}-${i}`} delay={(i % 3) * 120}>
                 <VideoCard video={video} />
               </Reveal>
             ))}
@@ -678,7 +618,7 @@ export default function App() {
           />
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {schedules.map((s, i) => (
+            {content.schedules.map((s, i) => (
               <Reveal key={i} delay={i * 150}>
                 <div className="bg-white rounded-3xl p-10 shadow-soft hover:shadow-premium transition-all border border-amber-100/80 hover:-translate-y-1.5 text-center h-full">
                   <div className="bg-gradient-to-br from-amber-500 to-amber-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-amber-200">
@@ -701,7 +641,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* ======= FLYER PENGKHOTBAH ======= */}
+      {/* ======= FLYER & KHOTBAH PENGKHOTBAH MINGGU INI ======= */}
       <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4">
           <SectionHeading
@@ -712,6 +652,27 @@ export default function App() {
           <Reveal>
             <FlyerCarousel />
           </Reveal>
+
+          {(() => {
+            const weekly = messageVideos.filter((v) =>
+              content.weeklyPreacherIds.includes(v.youtubeId)
+            );
+            if (weekly.length === 0) return null;
+            return (
+              <Reveal delay={150}>
+                <div className="mt-12">
+                  <p className="flex items-center justify-center gap-2 text-sm font-bold uppercase tracking-widest text-amber-700 mb-6">
+                    <Sparkles className="h-4 w-4" /> Khotbah Minggu Ini
+                  </p>
+                  <div className="grid md:grid-cols-2 gap-8">
+                    {weekly.map((video, i) => (
+                      <VideoCard key={`${video.youtubeId}-${i}`} video={video} />
+                    ))}
+                  </div>
+                </div>
+              </Reveal>
+            );
+          })()}
         </div>
       </section>
 
@@ -996,7 +957,10 @@ export default function App() {
 
           <p className="text-sm text-slate-500">
             © {new Date().getFullYear()} GBI Sirkuit Sentul. Semua hak
-            dilindungi.
+            dilindungi.{" "}
+            <a href="#/admin" className="hover:text-amber-400 transition-colors underline underline-offset-2 decoration-slate-600">
+              Admin
+            </a>
           </p>
         </div>
       </footer>
