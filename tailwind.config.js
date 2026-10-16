@@ -13,6 +13,14 @@ export default {
     },
 
     extend: {
+      fontFamily: {
+        sans: [
+          "Plus Jakarta Sans",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+        ],
+      },
       colors: {
         brand: {
           amber: "#F59E0B",
